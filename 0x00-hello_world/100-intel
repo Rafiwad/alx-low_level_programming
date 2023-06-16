@@ -1,2 +1,2 @@
 #!/bin/bash
-CFILE="main.c"; gcc -S -masm=intel $CFILE; mv $(basename $CFILE .c).s $(basename $CFILE .c).s
+CFILE="0-main.c"; gcc -S -masm=intel $CFILE -o ${CFILE%.c}.s
