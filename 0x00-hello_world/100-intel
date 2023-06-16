@@ -1,0 +1,11 @@
+
+#!/bin/bash
+
+CFILE="main.c"  # Change this to the desired C file name
+
+# Generate the assembly code in Intel syntax
+gcc -S -masm=intel $CFILE
+
+# Rename the output file
+BASENAME=$(basename $CFILE .c)
+mv $BASENAME.s $BASENAME.s
