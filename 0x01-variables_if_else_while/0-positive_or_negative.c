@@ -5,8 +5,8 @@
 /**
  * main - Entry point of the program
  *
- * Description: Generates a random number and prints whether
- * it is positive, zero, or negative.
+ * Description: Generates a random number between 0 and 99
+ * and prints whether it is positive, zero, or negative.
  *
  * Return: 0 (Success)
  */
@@ -16,7 +16,7 @@ int main(void)
 
     srand(time(0)); /* Initialize random seed based on current time */
 
-    n = rand();
+    n = rand() % 100;
 
     printf("%d is ", n);
 
@@ -33,6 +33,6 @@ int main(void)
         printf("negative\n");
     }
 
- 
-    return (0);
+    return 0;
 }
+
