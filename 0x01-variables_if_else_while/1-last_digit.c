@@ -1,22 +1,37 @@
+#include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdio.h>
+
 /**
- * main-Entry point
+ * main - Entry point of the program
  *
- * Return: Always 0 (success)
+ * Description: Generates a random number and prints the last digit
+ * along with additional information based on its value.
+ *
+ * Return: 0 (Success)
  */
 int main(void)
 {
-	int n;
-	srand(time(0));
-	n=rand()-RAND_MAX/2;
-	printf("%d",n);
-	if (n>0)
-		printf("is positive\n");
-	else if(n==0)
-		printf("is zero\n");
-	else
-		printf("is negative\n");
-	return(0);
+    int n;
+
+    srand(time(0)); /* Initialize random seed based on current time */
+
+    n = rand() - RAND_MAX / 2;
+
+    printf("Last digit of %d is %d and is ", n, n % 10);
+
+    if (n % 10 > 5)
+    {
+        printf("greater than 5\n");
+    }
+    else if (n % 10 == 0)
+    {
+        printf("0\n");
+    }
+    else
+    {
+        printf("less than 6 and not 0\n");
+    }
+
+    return (0);
 }
