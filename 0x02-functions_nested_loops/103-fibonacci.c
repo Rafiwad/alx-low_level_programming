@@ -1,26 +1,26 @@
 #include <stdio.h>
 
 /**
- * main - Entry point of the program
+ * main - Calculates the sum of even-valued Fibonacci terms
  *
- * Return: Always 0
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int count;
-    long int fib1 = 1, fib2 = 2, fib_sum, even_sum = 0;
+	int fib1 = 1, fib2 = 2, fib_next;
+	long sum = 0;
 
-    while (fib1 <= 4000000)
-    {
-        if (fib1 % 2 == 0)
-            even_sum += fib1;
+	while (fib1 <= 4000000)
+	{
+		if (fib1 % 2 == 0)
+			sum += fib1;
 
-        fib_sum = fib1 + fib2;
-        fib1 = fib2;
-        fib2 = fib_sum;
-    }
+		fib_next = fib1 + fib2;
+		fib1 = fib2;
+		fib2 = fib_next;
+	}
 
-    printf("%ld\n", even_sum);
+	printf("%ld\n", sum);
 
-    return 0;
+	return (0);
 }
